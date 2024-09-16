@@ -26,7 +26,7 @@ function App() {
   }
 
   return (
-    <>
+    <div className='App'>
       <h1>
         Welcome to StackOverflow Clone
       </h1>
@@ -34,7 +34,7 @@ function App() {
         <Navbar slideIn={handleSlideIn} />
         <AllRoutes slideIn={slideIn} handleSlideIn={handleSlideIn} />
       </Router>
-    </>
+    </div>
   )
 }
 
