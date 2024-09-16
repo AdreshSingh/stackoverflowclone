@@ -1,6 +1,11 @@
-import { } from 'react-router-dom'
-function AllRoutes() {
+import { Routes, Route } from 'react-router-dom'
+import { Home } from './pages/home/Home'
 
-    return (<div>  </div>)
+function AllRoutes({ slideIn, handleSlideIn }) {
+
+    return (
+        <Routes>
+            <Route path='/' element={<Home slideIn={slideIn} handleSlideIn={handleSlideIn} />} />
+        </Routes>)
 }
 export default AllRoutes
