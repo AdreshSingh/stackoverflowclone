@@ -6,18 +6,18 @@ import './LeftSidebar.css'
 function LeftSidebar({ slideIn }) {
 
     const slideInStyle = {
-        transfrom: "translateX(0%)"
+        transform: "translateX(0%)",
     }
 
     const slideOutStyle = {
-        transfrom: "translateX(-100%)",
+        transform: "translateX(-100%)",
     }
 
     return (
         <div className="left-sidebar" style={slideIn ? slideInStyle : slideOutStyle}>
             <nav className="side-nav">
                 <button className="nav-btn">
-                    <NavLink to='/' className={"side-nav-links"} activeClassName="active">
+                    <NavLink to='/' className={"side-nav-links"} >
                         <p>Home</p>
                     </NavLink>
                 </button>
@@ -26,20 +26,23 @@ function LeftSidebar({ slideIn }) {
                 </div>
 
                 <button className='nav-btn'>
-                    <NavLink to={'/Questions'} className={"side-nav-links"} activeClassName="active">
+                    <NavLink to={'/Questions'} className={"side-nav-links"} >
                         <img src={Globe} alt="earth svg" />
                         <p style={{ paddingLeft: "10px" }}>Questions</p>
                     </NavLink>
                 </button>
 
                 <button className='nav-btn'>
-                    <NavLink to={'/Tags'} className={"side-nav-links"} activeClassName="active" style={{ paddingLeft: "40px" }}>
+                    <NavLink to={'/Tags'} className={"side-nav-links"} style={{ paddingLeft: "40px" }}>
                         <p>Tags</p>
                     </NavLink>
                 </button>
 
                 <button className='nav-btn'>
-                    <NavLink to={'/Users'} className={"side-nav-links"} activeClassName="active" style={{ paddingLeft: "40px" }}>
+                    <NavLink
+                        to={'/Users'}
+                        className={"side-nav-links"}
+                        style={{ paddingLeft: "40px" }}>
                         <p>Questions</p>
                     </NavLink>
                 </button>
