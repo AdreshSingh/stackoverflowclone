@@ -15,13 +15,15 @@ function App() {
   useEffect(() => {
     if (window.innerWidth <= 768) {
       setSlideIn(false)
+      console.log("i'm off")
     }
   }, [])
 
 
   const handleSlideIn = () => {
     if (window.innerWidth <= 768) {
-      setSlideIn((state) => !state)
+      setSlideIn((slideIn) => !slideIn)
+      console.log(slideIn)
     }
   }
 
@@ -31,7 +33,7 @@ function App() {
         Welcome to StackOverflow Clone
       </h1>
       <Router>
-        <Navbar slideIn={handleSlideIn} />
+        <Navbar handleSlideIn={handleSlideIn} />
         <AllRoutes slideIn={slideIn} handleSlideIn={handleSlideIn} />
       </Router>
     </div>
