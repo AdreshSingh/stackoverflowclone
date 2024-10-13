@@ -5,7 +5,7 @@ import HomeMainbar from '../../components/homeMainbar/HomeMainbar'
 
 import '../../App.css'
 
-export const Home = ({ slideIn }) => {
+export const Home = ({ slideIn, handleSlideIn }) => {
     return (
         <div className="home-container-1">
             <LeftSidebar slideIn={slideIn} />
