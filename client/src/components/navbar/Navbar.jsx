@@ -7,7 +7,7 @@ import logo from '../../assets/logo.png'
 import search from '../../assets/search-solid.svg'
 import { Avatar } from '../avatar/Avatar'
 
-export const Navbar = () => {
+export const Navbar = ({ handleSlideIn }) => {
 
     const User = null;
 
@@ -15,7 +15,7 @@ export const Navbar = () => {
         <nav className="main-nav">
 
             <div className="navbar">
-                <button className='slide-in-icon'>
+                <button className='slide-in-icon' onClick={() => handleSlideIn()}>
                     <img src={bars} width={15} />
                 </button>
 
