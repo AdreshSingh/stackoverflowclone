@@ -8,6 +8,18 @@ function HomeMainbar() {
     const user = 1;
     const location = useLocation()
 
+    const navigate = useNavigate();
+
+    //? responsible for auth navigation
+    const checkAuth = () => {
+        if (user === null) {
+            alert("login or signup to ask a question")
+            navigate("/Auth")
+        } else {
+            navigate("/AskQuestion")
+        }
+    }
+
     const questionList = null;
     return (
         <div className='main-bar'>
@@ -16,7 +28,7 @@ function HomeMainbar() {
 
                     location.pathname === "/" ? (<h1>Top Questions</h1>) : (<h1>All Questions</h1>)
                 }
-                <button className='ask-btn'>Ask Question</button>
+                <button className='ask-btn' onClick={checkAuth}>Ask Question</button>
             </div>
             <div>
                 {
