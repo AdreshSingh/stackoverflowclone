@@ -40,7 +40,7 @@ export const Navbar = ({ handleSlideIn }) => {
 
                 <div className="navbar-2">
                     {User === null ?
-                        (<Link to={'/'} className='nav-item nav-links'>Login</Link>) :
+                        (<Link to={'/Auth'} className='nav-item nav-links'>Login</Link>) :
                         (<>
                             <Avatar
                                 backgroundcolor={"#009dff"}
