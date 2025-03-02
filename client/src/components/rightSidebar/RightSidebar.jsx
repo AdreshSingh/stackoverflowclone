@@ -5,7 +5,6 @@ function RightSidebar() {
 
     return (
         <div className="right-sidebar">
-            RightSidebar
             <Widget />
             <WidgetTag />
         </div>)
