@@ -26,7 +26,7 @@ function LeftSidebar({ slideIn }) {
                 </div>
 
                 <button className='nav-btn'>
-                    <NavLink to={'/Questions'} className={"side-nav-links"} >
+                    <NavLink to={'/Question'} className={"side-nav-links"} >
                         <img src={Globe} alt="earth svg" />
                         <p style={{ paddingLeft: "10px" }}>Questions</p>
                     </NavLink>
@@ -43,7 +43,7 @@ function LeftSidebar({ slideIn }) {
                         to={'/Users'}
                         className={"side-nav-links"}
                         style={{ paddingLeft: "40px" }}>
-                        <p>Questions</p>
+                        <p>Users</p>
                     </NavLink>
                 </button>
 
