@@ -4,7 +4,11 @@ import { AskQuestion } from './pages/askquestion/AskQuestion'
 import { Auth } from './pages/auth/Auth'
 import { AboutAuth } from './pages/auth/AboutAuth'
 import { Question } from './pages/question/Question'
-import { DisplayAnswer } from './pages/question/DisplayAnswer'
+import { DisplayQuestion } from './pages/question/DisplayQuestion'
+import Tags from './pages/tags/Tags'
+import PropTypes from 'prop-types'
+import Users from './pages/users/Users'
+import UserProfile from './pages/userprofile/UserProfile'
 
 function AllRoutes({ slideIn, handleSlideIn }) {
 
@@ -15,7 +19,17 @@ function AllRoutes({ slideIn, handleSlideIn }) {
             <Route path='/Auth' element={<Auth />} />
             <Route path='/AboutAuth' element={<AboutAuth />} />
             <Route path='/Question' element={<Question slideIn={slideIn} handleSlideIn={handleSlideIn} />} />
-            <Route path='/Question:id' element={<DisplayAnswer slideIn={slideIn} handleSlideIn={handleSlideIn} />} />
+            <Route path='/Question/:id' element={<DisplayQuestion slidein={slideIn} handleslidein={handleSlideIn} />} />
+            <Route path='/Tags' element={<Tags slideIn={slideIn} handleSlideIn={handleSlideIn} />} />
+            <Route path='/Users' element={<Users slideIn={slideIn} />} />
+            <Route path='/Users/:id' element={<UserProfile slideIn={slideIn} handleSlideIn={handleSlideIn} />} />
         </Routes>)
 }
+
+
 export default AllRoutes
+
+AllRoutes.propTypes = {
+    slideIn: PropTypes.bool.isRequired,
+    handleSlideIn: PropTypes.func.isRequired,
+}
