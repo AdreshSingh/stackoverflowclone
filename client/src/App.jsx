@@ -27,9 +27,9 @@ function App() {
 
   return (
     <div className='App'>
-      <h1>
+      {/* <h1>
         Welcome to StackOverflow Clone
-      </h1>
+      </h1> */}
       <Router>
         <Navbar handleSlideIn={handleSlideIn} />
         <AllRoutes slideIn={slideIn} handleSlideIn={handleSlideIn} />
