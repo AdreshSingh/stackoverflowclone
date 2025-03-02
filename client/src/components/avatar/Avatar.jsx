@@ -1,20 +1,25 @@
+
+
 export const Avatar = ({
     children,
-    backgroundcolor,
+    backgroundColor,
     px, py,
     color,
     borderRadius, fontSize, cursor
 }) => {
     const Style = {
-        backgroundcolor,
-        padding: `${py}px ${px}`,
+        backgroundColor,
+        padding: `${py}px ${px}px`,
         color: color || "black",
         borderRadius,
         fontSize,
-        textAlign: center,
+        textAlign: 'center',
         cursor: cursor || null,
-        textDecoration: "none"
+        textDecoration: "none",
+        width: "100%"
 
     }
-    return (<div style={Style}> {"devank".charAt(0).toUpperCase} </div>)
+    return (
+        <div style={Style}> {children == null ? "devank".charAt(0).toUpperCase() : children} </div>
+    )
 }
