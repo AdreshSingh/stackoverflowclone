@@ -1,17 +1,21 @@
-
-
 import { AboutAuth } from './AboutAuth'
 import icon from '../../assets/icon.png'
 import './Auth.css';
 import { useState } from 'react';
 
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { signup, login } from '../../actions/auth'
 
 export function Auth() {
 
     const [isSignup, setIsSignup] = useState(false)
-    const [name, setName] = useState()
-    const [email, setEmail] = useState()
-    const [password, setPassword] = useState()
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -23,9 +27,11 @@ export function Auth() {
             if (!name) {
                 alert("Enter a name to continue")
                 console.log({ email, password, name })
-            } else {
-                console.log({ email, password })
             }
+            dispatch(signup({ name, email, password }), navigate)
+        } else {
+            console.log({ email, password })
+            dispatch(login({ email, password }), navigate)
         }
     }
 
@@ -46,13 +52,19 @@ export function Auth() {
                         isSignup && (
                             <label htmlFor='name'>
                                 <h4>Display Name</h4>
-                                <input type="text" id='name' name="name" value={name} onChange={(e) => { setName(e.target.value) }} />
+                                <input type="text" id='name' name="name" value={name}
+                                    onChange={(e) => { setName(e.target.value) }}
+                                    placeholder='user name'
+                                />
                             </label>
                         )
                     }
                     <label htmlFor='email'>
-                        <h4>Display Name</h4>
-                        <input type="text" id='email' name="email" value={email} onChange={(e) => { setName(e.target.value) }} />
+                        <h4>Email</h4>
+                        <input type="text" id='email' name="email" value={email}
+                            onChange={(e) => { setEmail(e.target.value) }}
+                            placeholder='email'
+                        />
                     </label>
                     <label htmlFor='password'>
                         <div style={{ display: "flex", justifyContent: "space-between" }}>
@@ -63,7 +75,10 @@ export function Auth() {
                                 <p style={{ color: "#007ac6", fontSize: "13px" }}>Forgot Password</p>
                             )}
                         </div>
-                        <input type="text" name='password' id='password' value={password} onChange={(e) => { setPassword(e.target.value) }} />
+                        <input type="password" name='password' id='password' value={password}
+                            onChange={(e) => { setPassword(e.target.value) }}
+                            placeholder='strong password'
+                        />
                     </label>
                     <button type='submit' className='auth-btn'>{isSignup ? "Sign up" : "Log In"}</button>
                 </form>
