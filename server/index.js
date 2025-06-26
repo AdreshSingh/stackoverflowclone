@@ -29,10 +29,9 @@ app.get('/', (req, res) => {
 mongoose.connect(DB_URL, {
     serverSelectionTimeoutMS: 5000 // Adjust timeout
 })
-    .then(
+.then(
         () => (app.listen(PORT, () => {
             console.log(`BACKEND RUNNING ON ${PORT}`)
         }))
-    )
-    .catch((err) => (console.log(err.message)))
+).catch((err) => (console.log(err.message)))
 
